@@ -14,16 +14,16 @@ So the working route is:
 
 ## Step 1: Turn on GitHub Pages (about 2 minutes)
 
-The website is on the **`lokmandas-site`** branch of
-`github.com/anshul78-maker/Dps-dhumari`, with `index.html` at the top level.
+The website has its own repository, <https://github.com/anshul78-maker/lokmandas-website>
+(branch `main`, with `index.html` at the top level). It is completely separate from the ERP.
 
-1. Open <https://github.com/anshul78-maker/Dps-dhumari> and sign in.
+1. Open <https://github.com/anshul78-maker/lokmandas-website> and sign in.
 2. Click **Settings** (top bar), then **Pages** (left menu).
 3. Under **Build and deployment** set:
    - **Source:** *Deploy from a branch*
-   - **Branch:** `lokmandas-site`, folder `/ (root)`, then click **Save**.
+   - **Branch:** `main`, folder `/ (root)`, then click **Save**.
 4. Wait 1–3 minutes and refresh the page. GitHub shows
-   **"Your site is live at https://anshul78-maker.github.io/Dps-dhumari/"**.
+   **"Your site is live at https://anshul78-maker.github.io/lokmandas-website/"**.
 5. Open that link and check every page.
 
 ---
@@ -58,7 +58,7 @@ SEO, phone layout and speed all work properly.
 ### Option B: show the website inside a Wix page (no DNS changes)
 1. Open your site in the **Wix Editor**.
 2. Click **Add (+) → Embed Code → Embed a site**.
-3. Click **Enter Website Address** and paste `https://anshul78-maker.github.io/Dps-dhumari/`.
+3. Click **Enter Website Address** and paste `https://anshul78-maker.github.io/lokmandas-website/`.
 4. Drag the box to full width (**Stretch**) and make it as tall as the page.
 5. Remove the Wix header/footer on that page so you don't get two menus, then **Publish**.
 
@@ -68,15 +68,20 @@ scroll inside the frame, and some links open inside the frame. Use Option A if y
 ---
 
 ## Step 3: Updating the website later
-1. Edit the files inside `lokmandas-website/` and commit on the `lokmandas-website` branch.
-2. Refresh the Pages branch and push it:
-   ```
-   git subtree split --prefix=lokmandas-website -b lokmandas-site
-   git push origin lokmandas-site
-   ```
-   (If the split complains that the branch exists, delete it first with
-   `git branch -D lokmandas-site`.)
-3. GitHub Pages redeploys automatically in about a minute.
+Easiest: on GitHub open the repo, click a file, then the pencil icon. Edit it and click
+**Commit changes**. To add photos, use **Add file → Upload files** inside `img/`.
+
+Or from a PC with the repo cloned:
+```
+git clone https://github.com/anshul78-maker/lokmandas-website.git
+cd lokmandas-website
+# edit files, then:
+git add .
+git commit -m "Update website"
+git push
+```
+GitHub Pages redeploys automatically in about a minute, and a Wix embed shows the change
+without republishing in Wix.
 
 ---
 
