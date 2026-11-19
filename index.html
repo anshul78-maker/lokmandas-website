@@ -7,419 +7,29 @@
 <meta name="description" content="Dr. Lokmandas Public School, Etah — a CBSE school (Aff. No. 2131433) from Nursery to Class 12. Admissions open 2026–27." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
-<style>
-:root{
-  /* Palette from the school crest: navy ring + golden-yellow banner on white. Accent = gold, anchor = navy. */
-  --navy:#12306b;
-  --navy-2:#1b3f85;
-  --gold:#f6b912;
-  --gold-2:#ffd34d;
-  --gold-deep:#dd9e00;
-  --gold-ink:#916300;
-  --ink:#1c2340;
-  --muted:#5f6880;
-  --cream:#fff6df;
-  --cream-2:#fffced;
-  --line:#efe6d1;
-  --line-2:#e6d9ba;
-  --bg:#ffffff;
-  --bg-2:#fbf7ee;
-  --radius:16px;
-  --nav-h:66px;
-  --wrap:1160px;
-  --fd:"Plus Jakarta Sans",system-ui,sans-serif;
-  --fb:"DM Sans",system-ui,sans-serif;
-  color-scheme:light;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--fb);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,h4{font-family:var(--fd);margin:0;line-height:1.18;font-weight:700;letter-spacing:-.01em}
-p{margin:0}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{width:min(100% - 2.4rem,var(--wrap));margin-inline:auto}
-.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fd);font-weight:700;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink)}
-.eyebrow::before{content:"";width:20px;height:3px;background:var(--gold);border-radius:3px}
-.eyebrow.c::before{display:none}
-.muted{color:var(--muted)}
-.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.72rem 1.3rem;border-radius:11px;border:1.5px solid transparent;cursor:pointer;transition:transform .16s ease,box-shadow .16s ease,background .16s ease,border-color .16s ease,color .16s ease;white-space:nowrap}
-.btn svg{width:1.05em;height:1.05em}
-.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--navy);box-shadow:0 12px 24px -12px rgba(246,185,18,.9)}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 18px 30px -12px rgba(246,185,18,1)}
-.btn-navy{background:var(--navy);color:#fff}
-.btn-navy:hover{background:var(--navy-2);transform:translateY(-2px)}
-.btn-white{background:#fff;color:var(--navy)}
-.btn-white:hover{transform:translateY(-2px)}
-.btn-ghost{border-color:rgba(255,255,255,.9);color:#fff;background:transparent}
-.btn-ghost:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
-.btn-line{border-color:var(--line-2);color:var(--navy)}
-.btn-line:hover{border-color:var(--gold-deep);transform:translateY(-2px)}
-.sec-title{font-family:var(--fd);font-weight:800;color:var(--navy);font-size:clamp(1.55rem,3vw,2.2rem);letter-spacing:-.02em}
-.sec-sub{color:var(--muted);margin-top:.5rem;font-size:1.02rem}
-.rule{width:54px;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-deep));border-radius:3px;margin-top:.75rem}
-.sec-head{margin-bottom:2.4rem;max-width:660px}
-.sec-head.center{margin-inline:auto;text-align:center}
-.sec-head.center .eyebrow{justify-content:center}
-.sec-head.center .rule{margin-inline:auto}
-
-/* social icons */
-.social{display:inline-flex;gap:.5rem}
-.social a{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;transition:.16s}
-.social a svg{width:17px;height:17px}
-
-/* ---------- Header ---------- */
-header.nav{position:fixed;top:0;left:0;right:0;z-index:70;height:var(--nav-h);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:box-shadow .25s}
-header.nav.scrolled{box-shadow:0 10px 30px -22px rgba(18,48,107,.5)}
-.nav-in{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.brand{display:flex;align-items:center;gap:.6rem;min-width:0}
-.brand img{width:42px;height:42px;object-fit:contain;flex:none}
-.brand b{font-family:var(--fd);font-weight:800;color:var(--navy);font-size:1.02rem;line-height:1.05;letter-spacing:-.01em}
-.brand small{display:block;font-size:.56rem;letter-spacing:.2em;color:var(--gold-ink);font-weight:700;margin-top:.15rem}
-.menu{display:flex;align-items:center;gap:.1rem}
-.menu a{font-family:var(--fd);font-weight:600;font-size:.9rem;color:var(--ink);padding:.5rem .68rem;border-radius:8px;position:relative;transition:color .15s}
-.menu a:hover{color:var(--gold-deep)}
-.menu a::after{content:"";position:absolute;left:.68rem;right:.68rem;bottom:.34rem;height:2px;background:var(--gold);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .2s}
-.menu a:hover::after{transform:scaleX(1)}
-.nav-cta{display:flex;align-items:center;gap:.7rem}
-.nav-social a{color:var(--navy);background:var(--bg-2)}
-.nav-social a:hover{background:var(--gold);color:var(--navy)}
-.nav-cta .login{font-family:var(--fd);font-weight:600;font-size:.88rem;color:var(--navy)}
-.nav-cta .login:hover{color:var(--gold-deep)}
-.hamburger{display:none;flex-direction:column;gap:5px;width:44px;height:44px;border:1px solid var(--line-2);border-radius:11px;background:#fff;cursor:pointer;align-items:center;justify-content:center}
-.hamburger span{width:19px;height:2px;background:var(--navy);border-radius:2px;transition:.25s}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.drawer{position:fixed;inset:0 0 0 auto;width:min(82vw,320px);background:#fff;z-index:90;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);padding:1.2rem;display:flex;flex-direction:column;gap:.05rem;overflow:auto;border-left:1px solid var(--line)}
-.drawer.open{transform:translateX(0)}
-.drawer .d-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
-.drawer a.dl{font-family:var(--fd);font-weight:600;font-size:1.02rem;padding:.8rem .4rem;border-bottom:1px solid var(--line);color:var(--ink)}
-.drawer a.d-cta{margin-top:1.1rem;border:none;justify-content:center}
-.drawer .d-social{display:flex;gap:.5rem;margin-top:1.2rem}
-.drawer .d-social a{width:40px;height:40px;border-radius:10px;background:var(--bg-2);color:var(--navy)}
-.drawer .d-social a:hover{background:var(--gold)}
-.drawer .d-close{width:40px;height:40px;border-radius:10px;border:1px solid var(--line-2);background:#fff;color:var(--ink);font-size:1.3rem;cursor:pointer}
-.scrim{position:fixed;inset:0;background:rgba(10,20,45,.4);z-index:80;opacity:0;pointer-events:none;transition:opacity .3s}
-.scrim.open{opacity:1;pointer-events:auto}
-
-/* ---------- Hero ---------- */
-.hero{position:relative;height:clamp(560px,92svh,840px);margin-top:var(--nav-h);color:#fff;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.hero .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.3s ease}
-.hero .slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 0s}
-.hero .slide.active{opacity:1}
-.hero .slide.active img{transform:scale(1);transition:transform 8s ease-out}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,24,58,.64),rgba(10,24,58,.4) 42%,rgba(10,24,58,.78))}
-.hero-c{position:relative;z-index:2;text-align:center;padding:1.5rem;max-width:880px}
-.hero-c .crest{width:90px;height:90px;margin:0 auto 1.1rem;filter:drop-shadow(0 10px 22px rgba(0,0,0,.5))}
-.hero-c .badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(246,185,18,.22);border:1px solid rgba(255,211,77,.7);color:#ffe9ad;font-family:var(--fd);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.4rem .9rem;border-radius:999px;backdrop-filter:blur(4px)}
-.hero-c .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--gold-2);box-shadow:0 0 0 0 rgba(255,211,77,.7);animation:pulse 2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,211,77,.6)}70%{box-shadow:0 0 0 9px rgba(255,211,77,0)}100%{box-shadow:0 0 0 0 rgba(255,211,77,0)}}
-.hero-c h1{font-family:var(--fd);font-weight:800;font-size:clamp(1.9rem,4.6vw,3.3rem);letter-spacing:-.025em;margin:1rem auto .4rem;max-width:16ch;text-shadow:0 3px 20px rgba(0,0,0,.45);line-height:1.1}
-.hero-c .uline{width:90px;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-2));border-radius:3px;margin:.1rem auto .9rem;transform-origin:center}
-.hero-c .affil{font-size:clamp(.88rem,1.8vw,1.05rem);color:#e7ecf7;font-weight:500;text-shadow:0 2px 10px rgba(0,0,0,.4)}
-.hero-c .cta{margin-top:1.6rem;display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;background:none}
-.hero-dots{position:absolute;left:0;right:0;bottom:1.3rem;z-index:3;display:flex;gap:.5rem;justify-content:center}
-.hero-dots button{width:9px;height:9px;border-radius:50%;border:2px solid rgba(255,255,255,.7);background:transparent;cursor:pointer;padding:0;transition:.2s}
-.hero-dots button.active{background:var(--gold);border-color:var(--gold);width:26px;border-radius:999px}
-.hero-cue{position:absolute;left:50%;bottom:3rem;transform:translateX(-50%);z-index:3;color:rgba(255,255,255,.85);animation:bob 1.8s ease-in-out infinite}
-.hero-cue svg{width:26px;height:26px}
-@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
-/* entrance animation */
-.anim{opacity:0}
-.hero.in .crest{animation:hpop .8s .05s both cubic-bezier(.2,.9,.25,1)}
-.hero.in .badge{animation:hup .6s .35s both ease}
-.hero.in h1{animation:hup .75s .5s both cubic-bezier(.2,.8,.2,1)}
-.hero.in .uline{animation:hline .7s .9s both ease}
-.hero.in .affil{animation:hup .7s 1s both ease}
-.hero.in .cta{animation:hup .7s 1.15s both ease}
-.hero.in .hero-cue{animation:cueIn .6s 1.5s both ease,bob 1.8s 2.1s ease-in-out infinite}
-@keyframes hpop{0%{opacity:0;transform:scale(.55) rotate(-10deg)}60%{transform:scale(1.08) rotate(3deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
-@keyframes hup{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
-@keyframes hline{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
-@keyframes cueIn{from{opacity:0}to{opacity:.85}}
-
-/* ---------- Quick actions (redesigned) ---------- */
-.quick{position:relative;z-index:5;margin-top:-3.2rem}
-.qbar{background:#fff;border:1px solid var(--line);border-radius:22px;padding:.6rem;box-shadow:0 30px 60px -36px rgba(18,48,107,.55);display:grid;grid-template-columns:repeat(6,1fr);gap:.4rem;overflow:hidden}
-.qa{position:relative;display:flex;flex-direction:column;align-items:center;gap:.7rem;text-align:center;padding:1.5rem .7rem 1.3rem;border-radius:16px;transition:background .18s ease,transform .18s ease}
-.qa::after{content:"";position:absolute;left:50%;bottom:.7rem;transform:translateX(-50%) scaleX(0);width:26px;height:3px;border-radius:3px;background:var(--gold);transition:transform .2s ease}
-.qa:hover{background:var(--cream-2);transform:translateY(-4px)}
-.qa:hover::after{transform:translateX(-50%) scaleX(1)}
-.qa .ic{width:54px;height:54px;border-radius:16px;background:var(--cream);color:var(--navy);display:grid;place-items:center;transition:.18s;box-shadow:inset 0 0 0 1px var(--line-2)}
-.qa:hover .ic{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--navy);box-shadow:0 10px 20px -10px rgba(246,185,18,.9);transform:scale(1.06)}
-.qa .ic svg{width:25px;height:25px}
-.qa b{font-family:var(--fd);font-weight:700;font-size:.88rem;color:var(--navy);line-height:1.2}
-.qa span{font-size:.74rem;color:var(--muted)}
-.qdiv{width:1px;align-self:center;height:54px;background:var(--line)}
-
-/* ---------- Sections ---------- */
-section{padding:clamp(3.4rem,6.5vw,5.5rem) 0}
-.stats{background:linear-gradient(120deg,var(--navy),var(--navy-2));color:#fff;position:relative;overflow:hidden}
-.stats::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 360px at 88% -10%,rgba(246,185,18,.28),transparent 60%)}
-.stats .wrap{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
-.stat{text-align:center;padding:.8rem}
-.stat b{font-family:var(--fd);font-weight:800;font-size:clamp(2rem,5vw,3rem);display:block;line-height:1;font-variant-numeric:tabular-nums;color:var(--gold-2)}
-.stat span{display:block;margin-top:.45rem;color:#d7deef;font-size:.92rem}
-.stat+.stat{border-left:1px solid rgba(255,255,255,.14)}
-
-/* about */
-.about .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(1.8rem,4vw,3.6rem);align-items:center}
-.about-img{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 34px 60px -38px rgba(18,48,107,.55)}
-.about-img img{width:100%;height:100%;object-fit:cover}
-.about-img::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:5px;background:linear-gradient(90deg,var(--gold),var(--gold-2))}
-.about .lead{color:var(--muted);margin:1rem 0 1.4rem;font-size:1.04rem}
-.about .pts{display:grid;gap:1rem}
-.about .pt{display:grid;grid-template-columns:auto 1fr;gap:.85rem;align-items:start}
-.about .pt .n{width:40px;height:40px;border-radius:12px;background:var(--cream);color:var(--gold-deep);display:grid;place-items:center;flex:none;box-shadow:inset 0 0 0 1px var(--line-2)}
-.about .pt .n svg{width:20px;height:20px}
-.about .pt b{font-family:var(--fd);color:var(--navy);display:block}
-.about .pt p{color:var(--muted);font-size:.93rem}
-
-/* cards (programmes) */
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
-.pcard{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
-.pcard:hover{transform:translateY(-6px);box-shadow:0 30px 60px -40px rgba(18,48,107,.55);border-color:var(--line-2)}
-.pcard .ph{aspect-ratio:4/3;overflow:hidden;position:relative}
-.pcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.pcard:hover .ph img{transform:scale(1.06)}
-.pcard .bd{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
-.pcard .tag{font-family:var(--fd);font-weight:700;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep)}
-.pcard h3{font-size:1.15rem;color:var(--navy)}
-.pcard p{color:var(--muted);font-size:.9rem;flex:1}
-.facilities{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.fcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.4rem;transition:transform .18s ease,box-shadow .18s ease}
-.fcard:hover{transform:translateY(-5px);box-shadow:0 26px 54px -38px rgba(18,48,107,.5)}
-.fcard .ic{width:48px;height:48px;border-radius:13px;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--navy);display:grid;place-items:center;margin-bottom:.9rem}
-.fcard .ic svg{width:24px;height:24px}
-.fcard h3{font-size:1.02rem;color:var(--navy);margin-bottom:.3rem}
-.fcard p{font-size:.88rem;color:var(--muted)}
-
-/* gallery */
-.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:1rem}
-.gal figure{margin:0;border-radius:14px;overflow:hidden;position:relative}
-.gal figure img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.gal figure:hover img{transform:scale(1.06)}
-.gal figure figcaption{position:absolute;left:.9rem;bottom:.8rem;color:#fff;font-family:var(--fd);font-weight:600;font-size:.86rem;text-shadow:0 1px 10px rgba(0,0,0,.55)}
-.gal .big{grid-column:span 2;grid-row:span 2}
-.gal .tall{grid-row:span 2}
-
-/* message desk */
-.message{background:linear-gradient(130deg,var(--navy),var(--navy-2));color:#fff;position:relative;overflow:hidden}
-.message::before{content:"";position:absolute;right:-90px;top:-90px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(246,185,18,.3),transparent 65%)}
-.message .wrap{position:relative}
-.message .sec-title{color:#fff}
-.message .rule{background:linear-gradient(90deg,var(--gold),var(--gold-2))}
-.mtabs{display:flex;gap:.6rem;margin:1.3rem 0 1.6rem}
-.mtabs button{font-family:var(--fd);font-weight:600;font-size:.88rem;color:#dfe6f4;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:.55rem 1.2rem;cursor:pointer;transition:.16s}
-.mtabs button.active{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--navy);border-color:transparent}
-.mpanel{display:none;grid-template-columns:190px 1fr;gap:1.6rem;align-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:1.5rem}
-.mpanel.active{display:grid}
-.mpanel .pic{border-radius:14px;overflow:hidden;aspect-ratio:3/4}
-.mpanel .pic img{width:100%;height:100%;object-fit:cover;object-position:top}
-.mpanel .q{font-size:1rem;line-height:1.6;color:#eef1fb}
-.mpanel .who{margin-top:1rem}
-.mpanel .who b{font-family:var(--fd);font-weight:700;display:block;color:var(--gold-2)}
-.mpanel .who span{font-size:.85rem;color:#c3cde4}
-
-/* toppers slideshow */
-.toppers{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.ttabs{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.2rem}
-.ttabs button{font-family:var(--fd);font-weight:700;font-size:.92rem;color:var(--navy);background:#fff;border:1px solid var(--line-2);border-radius:999px;padding:.6rem 1.4rem;cursor:pointer;transition:.16s}
-.ttabs button.active{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--navy);border-color:transparent;box-shadow:0 12px 24px -14px rgba(246,185,18,.9)}
-.tpanel{display:none}
-.tpanel.active{display:block}
-.tcar{position:relative;max-width:720px;margin-inline:auto}
-.tcar-view{overflow:hidden;border-radius:20px;box-shadow:0 30px 60px -40px rgba(18,48,107,.5)}
-.tcar-track{display:flex}
-.tslide{flex:0 0 100%;display:grid;grid-template-columns:290px 1fr;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
-.tslide .pic{position:relative}
-.tslide .pic img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
-.tslide .rbadge{position:absolute;top:1rem;left:0;display:inline-flex;align-items:center;gap:.4rem;font-family:var(--fd);font-weight:700;font-size:.72rem;letter-spacing:.04em;padding:.4rem .9rem;border-radius:0 999px 999px 0;color:#fff;background:rgba(18,48,107,.92)}
-.tslide .rbadge.top{background:linear-gradient(90deg,var(--gold),var(--gold-2));color:var(--navy);box-shadow:0 8px 18px -8px rgba(246,185,18,.8)}
-.tslide .rbadge svg{width:13px;height:13px}
-.tslide .info{padding:2rem;display:flex;flex-direction:column;justify-content:center}
-.tslide .crown{display:inline-flex;align-items:center;gap:.45rem;color:var(--gold-deep);font-family:var(--fd);font-weight:700;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase}
-.tslide .crown svg{width:18px;height:18px}
-.tslide h3{font-size:clamp(1.6rem,3vw,2.2rem);color:var(--navy);margin:.5rem 0 .35rem}
-.tslide .pct{font-family:var(--fd);font-weight:800;font-size:clamp(2rem,4.2vw,2.8rem);color:var(--gold-deep);line-height:1}
-.tslide .pct small{font-size:.85rem;color:var(--muted);font-weight:500}
-.tslide .subj{margin-top:.9rem;align-self:flex-start;display:inline-flex;align-items:center;gap:.5rem;background:var(--cream);color:var(--gold-ink);border-radius:999px;padding:.45rem 1rem;font-size:.85rem;font-weight:600}
-.tslide .subj svg{width:15px;height:15px}
-.tcar-foot{display:flex;align-items:center;justify-content:center;gap:1.1rem;margin-top:1.4rem}
-.tcar-foot .nav{width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid var(--line-2);color:var(--navy);cursor:pointer;display:grid;place-items:center;transition:.16s}
-.tcar-foot .nav:hover{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--navy);border-color:transparent;transform:translateY(-2px)}
-.tcar-foot .nav svg{width:22px;height:22px}
-.tcar-foot .count{font-family:var(--fd);font-weight:700;color:var(--navy);min-width:88px;text-align:center}
-.tnote{text-align:center;color:var(--muted);font-size:.86rem;margin-top:1.6rem}
-
-/* admissions CTA — gold band */
-.cta{background:linear-gradient(120deg,var(--gold),var(--gold-2));color:var(--navy);text-align:center;position:relative;overflow:hidden}
-.cta::before{content:"";position:absolute;left:-60px;bottom:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.3),transparent 65%)}
-.cta .wrap{position:relative}
-.cta .eyebrow{color:var(--navy)}
-.cta .eyebrow::before{background:var(--navy)}
-.cta h2{font-family:var(--fd);font-weight:800;font-size:clamp(1.6rem,3.4vw,2.4rem);color:var(--navy)}
-.cta p{color:#4a3a06;margin:.6rem auto 1.5rem;max-width:46ch}
-.cta .row{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap}
-.cta .btn-outline-navy{border:1.5px solid var(--navy);color:var(--navy);background:transparent}
-.cta .btn-outline-navy:hover{background:var(--navy);color:#fff;transform:translateY(-2px)}
-
-/* contact */
-.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem)}
-.cinfo .row{display:flex;gap:1rem;padding:1.2rem 0;border-bottom:1px solid var(--line)}
-.cinfo .row:first-of-type{padding-top:0}
-.cinfo .ic{width:44px;height:44px;border-radius:12px;background:var(--cream);color:var(--gold-deep);display:grid;place-items:center;flex:none;box-shadow:inset 0 0 0 1px var(--line-2)}
-.cinfo .ic svg{width:21px;height:21px}
-.cinfo b{font-family:var(--fd);font-weight:700;display:block;font-size:.95rem;color:var(--navy)}
-.cinfo p,.cinfo a{color:var(--muted);font-size:.94rem;word-break:break-word}
-.cinfo a:hover{color:var(--gold-deep)}
-form.enq{background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:1.7rem}
-form.enq h3{color:var(--navy);font-size:1.2rem;margin-bottom:.3rem}
-form.enq p.hint{color:var(--muted);font-size:.9rem;margin-bottom:1.2rem}
-.fld{margin-bottom:1rem}
-.fld label{display:block;font-family:var(--fd);font-weight:600;font-size:.82rem;color:var(--navy);margin-bottom:.35rem}
-.fld input,.fld select,.fld textarea{width:100%;padding:.76rem .9rem;border:1px solid var(--line-2);border-radius:11px;background:#fff;font:inherit;font-size:.94rem;color:var(--ink)}
-.fld input:focus,.fld select:focus,.fld textarea:focus{outline:2px solid var(--gold-deep);outline-offset:1px;border-color:var(--gold-deep)}
-.fld textarea{min-height:92px;resize:vertical}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-form.enq .note{display:none;margin-top:1rem;background:var(--cream);border:1px solid var(--line-2);color:var(--gold-ink);border-radius:11px;padding:.9rem 1rem;font-size:.9rem}
-form.enq .note.show{display:block}
-
-/* footer */
-footer.site{background:linear-gradient(180deg,var(--navy),#0d2654);color:#bfccea}
-footer.site .wrap{display:grid;grid-template-columns:1.7fr 1fr 1.2fr;gap:2rem;padding:clamp(2.6rem,5vw,3.6rem) 0 1.6rem}
-footer .fb{display:flex;gap:.7rem;align-items:center;margin-bottom:1rem}
-footer .fb img{width:48px;height:48px;object-fit:contain}
-footer .fb b{font-family:var(--fd);font-weight:800;color:#fff;font-size:1.08rem;display:block}
-footer .fb small{letter-spacing:.18em;font-size:.58rem;color:var(--gold-2);font-weight:700}
-footer .fa{font-size:.9rem;color:#9fb0d4;max-width:40ch}
-footer .f-social{margin-top:1.1rem}
-footer .f-social a{background:rgba(255,255,255,.08);color:#fff}
-footer .f-social a:hover{background:var(--gold);color:var(--navy)}
-footer h4{font-family:var(--fd);color:#fff;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem}
-footer ul{list-style:none;padding:0;margin:0;display:grid;gap:.55rem}
-footer ul a{color:#bfccea;font-size:.92rem}
-footer ul a:hover{color:var(--gold-2)}
-footer .fc div{display:flex;gap:.55rem;margin-bottom:.7rem;font-size:.9rem;align-items:flex-start}
-footer .fc svg{width:16px;height:16px;color:var(--gold-2);flex:none;margin-top:.2rem}
-.fbot{border-top:1px solid rgba(255,255,255,.12)}
-.fbot .wrap{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;flex-wrap:wrap;font-size:.8rem;color:#8ea0c6}
-.to-top{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--navy);border:none;cursor:pointer;display:grid;place-items:center;box-shadow:0 14px 30px -14px rgba(246,185,18,.9);opacity:0;pointer-events:none;transform:translateY(10px);transition:.25s;z-index:60}
-.to-top.show{opacity:1;pointer-events:auto;transform:none}
-.to-top svg{width:20px;height:20px}
-
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-.reveal.in{opacity:1;transform:none}
-
-/* ---------- Popup ---------- */
-.pop-scrim{position:fixed;inset:0;background:rgba(8,18,45,.64);z-index:200;display:none;align-items:flex-start;justify-content:center;padding:1.5rem 1rem;overflow:auto}
-.pop-scrim.show{display:flex}
-.pop{position:relative;width:min(100%,560px);margin:auto;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 40px 90px -28px rgba(0,0,0,.6);animation:pop .35s ease}
-@keyframes pop{from{opacity:0;transform:translateY(22px) scale(.97)}to{opacity:1;transform:none}}
-.pop .ptop{background:linear-gradient(110deg,var(--navy),var(--navy-2));color:#fff;padding:1rem 3.1rem 1rem 1.2rem;display:flex;align-items:center;gap:.8rem;border-bottom:3px solid var(--gold)}
-.pop .ptop img{width:46px;height:46px;object-fit:contain;background:#fff;border-radius:50%;padding:3px;flex:none}
-.pop .ptop b{font-family:var(--fd);font-weight:700;font-size:.98rem;display:block;line-height:1.15}
-.pop .ptop span{font-size:.68rem;opacity:.9}
-.pop .pclose{position:absolute;top:.55rem;right:.6rem;z-index:5;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.22);border:none;color:#fff;font-size:1.4rem;line-height:1;cursor:pointer}
-.pop .pclose:hover{background:rgba(255,255,255,.4)}
-.pop-view{overflow:hidden}
-.pop-track{display:flex;width:200%;transition:transform .35s cubic-bezier(.4,0,.2,1)}
-.pop-page{width:50%;padding:1.3rem 1.3rem 1.4rem;text-align:center}
-.pop .kick{display:inline-block;background:var(--cream);color:var(--gold-ink);font-family:var(--fd);font-weight:700;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .9rem;border-radius:999px}
-.pop h3{font-family:var(--fd);font-weight:800;color:var(--navy);font-size:1.4rem;margin:.6rem 0 .1rem}
-.pop .psub{color:var(--muted);font-size:.86rem;margin-bottom:1rem}
-.pop .pfeat{display:flex;align-items:center;gap:1rem;text-align:left;border:1px solid var(--line);border-radius:14px;padding:.8rem;background:var(--cream-2)}
-.pop .pfeat .pp{width:92px;height:112px;border-radius:11px;overflow:hidden;flex:none}
-.pop .pfeat .pp img{width:100%;height:100%;object-fit:cover}
-.pop .pfeat .rk{font-family:var(--fd);font-weight:700;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep)}
-.pop .pfeat h4{font-family:var(--fd);font-weight:800;color:var(--navy);font-size:1.2rem;margin:.1rem 0}
-.pop .pfeat .p{font-family:var(--fd);font-weight:800;color:var(--gold-deep);font-size:1.5rem;line-height:1}
-.pop .pfeat .p small{font-size:.72rem;color:var(--muted);font-weight:500}
-.pop .pfeat .sj{font-size:.74rem;color:var(--muted);margin-top:.15rem}
-.pop .prow{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.9rem}
-.pop .prow .r{border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#fff}
-.pop .prow .r .ph{aspect-ratio:1/1;overflow:hidden}
-.pop .prow .r .ph img{width:100%;height:100%;object-fit:cover}
-.pop .prow .r .nm{padding:.4rem .3rem .5rem}
-.pop .prow .r .nm b{font-family:var(--fd);font-weight:600;font-size:.72rem;color:var(--navy);display:block;line-height:1.15}
-.pop .prow .r .nm .p{font-family:var(--fd);font-weight:800;font-size:.84rem;color:var(--gold-deep)}
-.pop-foot{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:1rem 1.3rem 1.3rem;border-top:1px solid var(--line);flex-wrap:wrap}
-.pop-dots{display:flex;gap:.4rem}
-.pop-dots button{width:8px;height:8px;border-radius:50%;border:none;background:var(--line-2);cursor:pointer;padding:0;transition:.2s}
-.pop-dots button.active{background:var(--gold-deep);width:22px;border-radius:999px}
-.pop-foot .pf-acts{display:flex;gap:.5rem;flex-wrap:wrap}
-
-/* ---------- Responsive ---------- */
-@media(max-width:1040px){
-  .menu,.nav-cta .login,.nav-social{display:none}
-  .hamburger{display:flex}
-  .qbar{grid-template-columns:repeat(3,1fr)}
-  .cards,.fgrid{grid-template-columns:repeat(2,1fr)}
-  .gal{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:820px){
-  .about .wrap,.contact .wrap{grid-template-columns:1fr}
-  .about-img{order:-1}
-  .mpanel{grid-template-columns:1fr}
-  .mpanel .pic{max-width:180px}
-  .stats .wrap{grid-template-columns:repeat(2,1fr);gap:0}
-  .stat:nth-child(3),.stat:nth-child(4){border-top:1px solid rgba(255,255,255,.14)}
-  .stat:nth-child(3){border-left:none}
-  footer.site .wrap{grid-template-columns:1fr 1fr}
-  footer .fb-col{grid-column:1 / -1}
-}
-@media(max-width:560px){
-  .nav-cta .btn-gold{display:none}
-  .brand b{white-space:nowrap;font-size:1rem}
-  .brand small{font-size:.52rem}
-  .quick{margin-top:-2rem}
-  .qbar{grid-template-columns:repeat(2,1fr);border-radius:18px}
-  .cards,.fgrid,.gal{grid-template-columns:1fr}
-  .tslide{grid-template-columns:1fr}
-  .tslide .pic img{aspect-ratio:16/11}
-  .gal{grid-auto-rows:210px}
-  .gal .big{grid-column:span 1;grid-row:span 1}
-  .gal .tall{grid-row:span 1}
-  .two{grid-template-columns:1fr}
-  .cta .row{flex-direction:column}
-}
-@media (prefers-reduced-motion:reduce){
-  *{animation:none !important;scroll-behavior:auto !important}
-  .reveal{opacity:1;transform:none;transition:none}
-  .anim{opacity:1}
-  .hero-cue{display:none}
-  .hero .slide.active img{transition:none}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<!-- Header -->
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="#top">
+    <a class="brand" href="index.html">
       <img src="img/crest.png" alt="Dr. Lokmandas Public School crest" />
       <span><b>Dr. Lokmandas</b><small>PUBLIC SCHOOL · ETAH</small></span>
     </a>
     <nav class="menu">
-      <a href="#about">About</a>
-      <a href="#academics">Academics</a>
-      <a href="#facilities">Facilities</a>
-      <a href="#life">Gallery</a>
-      <a href="#toppers">Toppers</a>
-      <a href="#contact">Contact</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="facilities.html">Facilities</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="toppers.html">Toppers</a>
+      <a href="cbse.html">CBSE</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-cta">
-      <span class="social nav-social">
-        <a href="https://youtube.com/@drlokmandaspublicschool7262" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 0 0-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 0 0-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 0 0 2 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 0 0 2-2C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5z"/></svg></a>
-        <a href="https://www.facebook.com/share/1CNdkbkCRL/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
-        <a href="https://www.instagram.com/dldpsgroup" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></a>
-      </span>
       <a class="login" href="https://lockmandas-school-erp-web.vercel.app/login" target="_blank" rel="noopener">ERP Login</a>
-      <a class="btn btn-gold" href="#admissions">Apply now</a>
+      <a class="btn btn-gold" href="contact.html">Apply now</a>
       <button class="hamburger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -429,15 +39,16 @@ footer .fc svg{width:16px;height:16px;color:var(--gold-2);flex:none;margin-top:.
 <aside class="drawer" id="drawer" aria-hidden="true">
   <div class="d-head"><span style="font-family:var(--fd);font-weight:800;font-size:1.05rem;color:var(--navy)">Menu</span>
     <button class="d-close" id="dClose" aria-label="Close menu">&times;</button></div>
-  <a class="dl" href="#about">About</a>
-  <a class="dl" href="#academics">Academics</a>
-  <a class="dl" href="#facilities">Facilities</a>
-  <a class="dl" href="#life">Gallery</a>
-  <a class="dl" href="#messages">Leadership</a>
-  <a class="dl" href="#toppers">Toppers</a>
-  <a class="dl" href="#contact">Contact</a>
+  <a class="dl" href="about.html">About</a>
+  <a class="dl" href="academics.html">Academics</a>
+  <a class="dl" href="facilities.html">Facilities</a>
+  <a class="dl" href="gallery.html">Gallery</a>
+  <a class="dl" href="about.html#messages">Leadership</a>
+  <a class="dl" href="toppers.html">Toppers</a>
+  <a class="dl" href="cbse.html">CBSE</a>
+  <a class="dl" href="contact.html">Contact</a>
   <a class="btn btn-line d-cta" href="https://lockmandas-school-erp-web.vercel.app/login" target="_blank" rel="noopener">ERP Login</a>
-  <a class="btn btn-gold d-cta" href="#admissions">Apply for 2026–27</a>
+  <a class="btn btn-gold d-cta" href="contact.html">Apply for 2026–27</a>
   <div class="social d-social">
     <a href="https://youtube.com/@drlokmandaspublicschool7262" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 0 0-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 0 0-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 0 0 2 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 0 0 2-2C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5z"/></svg></a>
     <a href="https://www.facebook.com/share/1CNdkbkCRL/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
@@ -447,45 +58,42 @@ footer .fc svg{width:16px;height:16px;color:var(--gold-2);flex:none;margin-top:.
 
 <main id="top">
 
-<!-- Hero -->
 <section class="hero" id="hero">
-  <div class="slide active"><img src="img/campus-front.jpg" alt="Dr. Lokmandas Public School building and campus" /></div>
-  <div class="slide"><img src="img/hero-campus.jpg" alt="School campus and sports court" /></div>
-  <div class="slide"><img src="img/campus-court.jpg" alt="School play court and building" /></div>
-  <div class="slide"><img src="img/life-activity.jpg" alt="Students learning" /></div>
-  <div class="slide"><img src="img/life-sports.jpg" alt="Students at sport" /></div>
-  <div class="slide"><img src="img/life-yoga.jpg" alt="Yoga and wellbeing" /></div>
+  <div class="slide active"><img src="img/hero/hero-1-campus-drive.jpg" alt="Campus drive with the school buildings and main court" /></div>
+  <div class="slide"><img src="img/hero/hero-2-main-court.jpg" alt="School buildings and the colourful sports court" /></div>
+  <div class="slide"><img src="img/hero/hero-3-painted-hands.jpg" alt="Students showing colourful painted hands at reception" style="object-position:center 35%" /></div>
+  <div class="slide"><img src="img/hero/hero-4-yoga-lawn.jpg" alt="Students practising yoga on the school lawn" /></div>
+  <div class="slide"><img src="img/hero/hero-5-karate.jpg" alt="Students in a karate bout in the activity hall" style="object-position:center 40%" /></div>
+  <div class="slide"><img src="img/hero/hero-6-cultural-day.jpg" alt="Students in traditional attire on cultural day" style="object-position:center 30%" /></div>
   <div class="hero-c">
     <img class="crest anim" src="img/crest.png" alt="Dr. Lokmandas Public School crest" />
     <div><span class="badge anim"><span class="dot"></span>Admissions open 2026–27</span></div>
     <h1 class="anim">Dr. Lokmandas Public School</h1>
     <div class="uline anim"></div>
     <p class="affil anim">CBSE Affiliated · Aff. No. 2131433 · Nursery to Class 12 · Etah, U.P.</p>
-    <div class="cta anim">
-      <a class="btn btn-gold" href="#admissions">Admission enquiry
+    <div class="hero-btns anim">
+      <a class="btn btn-gold" href="contact.html">Admission enquiry
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn-ghost" href="#about">Explore the school</a>
+      <a class="btn btn-ghost" href="about.html">Explore the school</a>
     </div>
   </div>
-  <a class="hero-cue" href="#quick" aria-label="Scroll down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+  <a class="hero-cue" href="index.html#quick" aria-label="Scroll down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
   <div class="hero-dots" id="heroDots"></div>
 </section>
 
-<!-- Quick actions -->
 <div class="quick" id="quick">
   <div class="wrap">
     <div class="qbar">
-      <a class="qa" href="#admissions"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></span><b>Admissions</b><span>Enquire &amp; enrol</span></a>
+      <a class="qa" href="contact.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></span><b>Admissions</b><span>Enquire &amp; enrol</span></a>
       <a class="qa" href="https://lockmandas-school-erp-web.vercel.app/login" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span><b>Pay Fees</b><span>Via school ERP</span></a>
       <a class="qa" href="https://lockmandas-school-erp-web.vercel.app/login" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></span><b>Transfer Certificate</b><span>Request &amp; track</span></a>
-      <a class="qa" href="#news"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H5.2L4 17.2z"/><path d="M8 9h8M8 12h5"/></svg></span><b>Notices</b><span>Circulars &amp; updates</span></a>
-      <a class="qa" href="#toppers"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></span><b>Toppers</b><span>CBSE 2025–26</span></a>
+      <a class="qa" href="cbse.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H5.2L4 17.2z"/><path d="M8 9h8M8 12h5"/></svg></span><b>Notices</b><span>Circulars &amp; updates</span></a>
+      <a class="qa" href="toppers.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></span><b>Toppers</b><span>CBSE 2025–26</span></a>
       <a class="qa" href="https://www.google.com/maps/search/Dr.+Lokman+Das+Public+School+Chandpur+Aliganj+Road+Etah" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><b>Directions</b><span>Find the campus</span></a>
     </div>
   </div>
 </div>
 
-<!-- Stats -->
 <section class="stats" style="padding-block:clamp(2.6rem,5vw,3.6rem)">
   <div class="wrap">
     <div class="stat"><b data-count="25" data-suffix="+">0</b><span>Years of excellence</span></div>
@@ -495,63 +103,116 @@ footer .fc svg{width:16px;height:16px;color:var(--gold-2);flex:none;margin-top:.
   </div>
 </section>
 
-<!-- About -->
-<section class="about" id="about">
+<!-- About teaser -->
+<section class="about">
   <div class="wrap">
     <div class="about-img reveal"><img src="img/campus-front.jpg" alt="Dr. Lokmandas Public School campus" /></div>
     <div class="reveal">
-      <span class="eyebrow">About the school</span>
-      <h2 class="sec-title" style="margin-top:.5rem">Inspiring minds, shaping futures.</h2>
+      <span class="eyebrow">Welcome</span>
+      <h2 class="sec-title" style="margin-top:.5rem">A joyful CBSE school in Etah</h2>
       <div class="rule"></div>
-      <p class="lead">Dr. Lokmandas Public School is a CBSE-affiliated, co-educational school in Etah, Uttar Pradesh, welcoming children from Nursery to Class 12. We nurture capable, compassionate learners through academic rigour, creative exploration, and a deeply rooted culture of respect.</p>
-      <div class="pts">
-        <div class="pt"><span class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 12 2-2 1.5 1.5L10 9l2 2 4.5-4.5L20 9"/><path d="M4 18h16"/></svg></span><div><b>Academic distinction</b><p>Thoughtful teaching and strong foundations that prepare every learner for what comes next.</p></div></div>
-        <div class="pt"><span class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><div><b>Character &amp; wellbeing</b><p>A safe, inclusive environment grounded in kindness, integrity, and personal responsibility.</p></div></div>
-        <div class="pt"><span class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg></span><div><b>Whole-child growth</b><p>Sport, arts, leadership, and service help students discover who they can become.</p></div></div>
+      <p class="lead">Dr. Lokmandas Public School nurtures capable, compassionate learners from Nursery to Class 12 through academic rigour, creative exploration and a deeply rooted culture of respect — where every child is known, challenged and inspired to make a difference.</p>
+      <div style="display:flex;gap:.7rem;flex-wrap:wrap;margin-top:.3rem">
+        <a class="btn btn-navy" href="about.html">About the school
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-line" href="contact.html">Admission enquiry</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Academics -->
-<section id="academics">
+<!-- Why us -->
+<section class="facilities">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="eyebrow c">Academics</span>
-      <h2 class="sec-title">Learning at every stage</h2>
-      <div class="rule"></div>
-    </div>
-    <div class="cards">
-      <article class="pcard reveal"><div class="ph"><img src="img/prog-early.jpg" alt="Early Years" /></div><div class="bd"><span class="tag">Nursery – KG</span><h3>Early Years</h3><p>Playful discovery, language, and a secure, happy start to school life.</p></div></article>
-      <article class="pcard reveal"><div class="ph"><img src="img/prog-primary.jpg" alt="Primary" /></div><div class="bd"><span class="tag">Class 1 – 5</span><h3>Primary</h3><p>Firm literacy, numeracy and curiosity, built on confidence and care.</p></div></article>
-      <article class="pcard reveal"><div class="ph"><img src="img/prog-middle.jpg" alt="Middle" /></div><div class="bd"><span class="tag">Class 6 – 8</span><h3>Middle</h3><p>Independent thinking, collaboration and an expanding world of subjects.</p></div></article>
-      <article class="pcard reveal"><div class="ph"><img src="img/prog-senior.jpg" alt="Senior" /></div><div class="bd"><span class="tag">Class 9 – 12</span><h3>Senior</h3><p>Focused academic pathways, character and readiness for what comes next.</p></div></article>
-    </div>
-  </div>
-</section>
-
-<!-- Facilities -->
-<section class="facilities" id="facilities">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow c">Campus &amp; facilities</span>
-      <h2 class="sec-title">Spaces made for meaningful days</h2>
+      <span class="eyebrow c">Why Dr. Lokmandas</span>
+      <h2 class="sec-title">A school families trust</h2>
       <div class="rule"></div>
     </div>
     <div class="fgrid">
-      <div class="fcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3v6l-5 8a2 2 0 0 0 1.8 3h12.4a2 2 0 0 0 1.8-3l-5-8V3"/><path d="M8 3h8M8 14h8"/></svg></div><h3>Science Labs</h3><p>Hands-on physics, chemistry and biology.</p></div>
-      <div class="fcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><h3>Computer Lab</h3><p>Smart, connected digital learning.</p></div>
-      <div class="fcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 0-2 2z"/><path d="M20 5a2 2 0 0 0-2-2h-5v18h5a2 2 0 0 1 2 2z"/></svg></div><h3>Library</h3><p>A calm reading room for every age.</p></div>
-      <div class="fcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3c3 3 3 15 0 18M3 12h18"/></svg></div><h3>Sports &amp; Games</h3><p>Grounds and courts for athletics and joy.</p></div>
-      <div class="fcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 9h10M7 12h6"/></svg></div><h3>Smart Classrooms</h3><p>Bright rooms that bring lessons to life.</p></div>
-      <div class="fcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17h13V7a2 2 0 0 0-2-2H3z"/><path d="M16 9h3l2 3v5h-5"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div><h3>Safe Transport</h3><p>Reliable buses with trusted care staff.</p></div>
-      <div class="fcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div><h3>Arts &amp; Music</h3><p>Studios for art, dance and music.</p></div>
-      <div class="fcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 11 2 2 4-4"/></svg></div><h3>Safe Campus</h3><p>Secure, supervised, caring mentoring.</p></div>
+      <div class="fcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m4 12 2-2 1.5 1.5L10 9l2 2 4.5-4.5L20 9"/><path d="M4 18h16"/></svg></div><h3>Academic distinction</h3><p>Strong foundations and thoughtful teaching at every stage.</p></div>
+      <div class="fcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 11 2 2 4-4"/></svg></div><h3>Safe &amp; caring campus</h3><p>A secure, supervised environment grounded in kindness.</p></div>
+      <div class="fcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg></div><h3>Experienced faculty</h3><p>Dedicated, well-qualified teachers who mentor every child.</p></div>
+      <div class="fcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg></div><h3>Whole-child growth</h3><p>Sport, arts, leadership and service alongside academics.</p></div>
     </div>
   </div>
 </section>
 
-<!-- Gallery -->
+<section class="leaders" id="messages">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow c">Message desk</span>
+      <h2 class="sec-title">Thoughts from our leadership</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="lgrid">
+      <article class="lcard">
+        <div class="lhead">
+          <div class="lpic"><img src="img/principal.jpg" alt="Principal of Dr. Lokmandas Public School" /></div>
+          <div><span class="lrole">From the Principal&rsquo;s desk</span><h3>Principal</h3><small>Dr. Lokmandas Public School, Etah</small></div>
+        </div>
+        <blockquote class="lthought">A school is not built of bricks alone &mdash; it is built of the belief we place in every child.</blockquote>
+        <div class="lbody">
+          <p>Dear parents and students, every child who walks through our gates carries a light of their own. Our work is to protect that light and help it grow brighter &mdash; through curiosity, discipline and genuine care.</p>
+          <p>In our classrooms we value the question as much as the answer. We want our learners to read deeply, think clearly, speak with confidence and act with kindness. Results matter, and we are proud of them; but what matters most is the person a child becomes &mdash; honest, resilient and ready to serve.</p>
+          <p>Together with our devoted teachers and the trust of our parents, we promise to walk beside every child, every step of the way.</p>
+        </div>
+        <div class="lsign"><span>Principal</span><small>With warm regards</small></div>
+      </article>
+      <article class="lcard">
+        <div class="lhead">
+          <div class="lpic"><img src="img/chairman.jpg" alt="Chairman of Dr. Lokmandas Public School" /></div>
+          <div><span class="lrole">From the Chairman&rsquo;s desk</span><h3>Chairman</h3><small>Dr. Lokmandas Public School, Etah</small></div>
+        </div>
+        <blockquote class="lthought">Knowledge matters &mdash; but knowledge joined with character is what truly changes the world.</blockquote>
+        <div class="lbody">
+          <p>Our institution was founded on a simple, enduring promise: that the children of Etah deserve an education equal to the very best. Carrying that vision forward, we have invested in bright classrooms, laboratories, sport and the arts, so that every learner can discover their strengths.</p>
+          <p>Yet buildings and results are only the beginning. We want our students to leave these gates rooted in our values and open to the world &mdash; confident in who they are, respectful of others, and determined to give back to the community that raised them.</p>
+          <p>I thank our parents for their faith and our teachers for their dedication. The future we are building together belongs to our children.</p>
+        </div>
+        <div class="lsign"><span>Chairman</span><small>With best wishes</small></div>
+      </article>
+    </div>
+    <p class="founder reveal"><span class="fdot"></span>Founded in the cherished memory of our Founder, <b>Late Dr. Ashok Pachauri (Adv.)</b><span class="fdot"></span></p>
+  </div>
+</section>
+
+<section id="explore">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow c">Explore</span>
+      <h2 class="sec-title">Discover our school</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="cards c3">
+      <a class="pcard reveal" href="about.html"><div class="ph"><img src="img/gallery/school-gate.jpg" alt="About the school" /></div><div class="bd"><span class="tag">About</span><h3>Our school &amp; leadership</h3><p>Purpose, values and messages from our leadership.</p></div></a>
+      <a class="pcard reveal" href="academics.html"><div class="ph"><img src="img/prog-middle.jpg" alt="Academics" /></div><div class="bd"><span class="tag">Academics</span><h3>Learning at every stage</h3><p>Early Years to Senior &mdash; the full journey.</p></div></a>
+      <a class="pcard reveal" href="facilities.html"><div class="ph"><img src="img/prog-primary.jpg" alt="Facilities" /></div><div class="bd"><span class="tag">Facilities</span><h3>Campus &amp; facilities</h3><p>Labs, library, sport, transport and more.</p></div></a>
+      <a class="pcard reveal" href="gallery.html"><div class="ph"><img src="img/gallery/cultural-day.jpg" alt="Gallery" /></div><div class="bd"><span class="tag">Gallery</span><h3>Life at Dr. Lokmandas</h3><p>Moments from everyday school life.</p></div></a>
+      <a class="pcard reveal" href="toppers.html"><div class="ph"><img src="img/gallery/debate-award.jpg" alt="Toppers" /></div><div class="bd"><span class="tag">Toppers</span><h3>CBSE 2025&ndash;26 toppers</h3><p>Celebrating our Class X &amp; XII achievers.</p></div></a>
+      <a class="pcard reveal" href="cbse.html"><div class="ph"><img src="img/gallery/campus-volleyball.jpg" alt="CBSE" /></div><div class="bd"><span class="tag">CBSE</span><h3>Mandatory disclosure</h3><p>Affiliation and all mandatory documents.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- Toppers teaser -->
+<section class="toppers">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow c">Our pride</span>
+      <h2 class="sec-title">CBSE 2025&ndash;26 toppers</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="top-teaser reveal">
+      <figure><div class="av"><img src="img/toppers/x-divyam-verma.jpg" alt="Divyam Verma" /></div><b>Divyam Verma</b><span class="p">96.2%</span><small>Class X Topper</small></figure>
+      <figure><div class="av"><img src="img/toppers/xii-kajal-verma.jpg" alt="Kajal Verma" /></div><b>Kajal Verma</b><span class="p">95%</span><small>Class XII Topper</small></figure>
+    </div>
+    <div class="ctr reveal"><a class="btn btn-gold" href="toppers.html">View all toppers
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<!-- Gallery strip -->
 <section id="life">
   <div class="wrap">
     <div class="sec-head center reveal">
@@ -560,162 +221,27 @@ footer .fc svg{width:16px;height:16px;color:var(--gold-2);flex:none;margin-top:.
       <div class="rule"></div>
     </div>
     <div class="gal">
-      <figure class="big reveal"><img src="img/life-activity.jpg" alt="Students learning together" /><figcaption>Every voice matters</figcaption></figure>
-      <figure class="tall reveal"><img src="img/life-yoga.jpg" alt="Yoga and wellbeing" /><figcaption>Yoga &amp; wellbeing</figcaption></figure>
-      <figure class="reveal"><img src="img/campus-court.jpg" alt="School court" /><figcaption>Our campus</figcaption></figure>
-      <figure class="reveal"><img src="img/life-sports.jpg" alt="Sports and teamwork" /><figcaption>Sporting spirit</figcaption></figure>
-      <figure class="reveal"><img src="img/prog-early.jpg" alt="Early years play" /><figcaption>Joyful beginnings</figcaption></figure>
+      <figure class="big reveal" data-cat="campus"><img src="img/gallery/school-gate.jpg" alt="Main gate of Dr. Lokman Das Public School, Etah" loading="lazy" /><figcaption>Our main gate</figcaption></figure>
+      <figure class="tall reveal" data-cat="celebrations"><img src="img/gallery/janmashtami.jpg" alt="Young students dressed for the Janmashtami celebration" loading="lazy" /><figcaption>Janmashtami celebration</figcaption></figure>
+      <figure class="reveal" data-cat="achievements"><img src="img/gallery/debate-winners.jpg" alt="Students with certificates and trophies at the inter-school debate" loading="lazy" /><figcaption>Inter-school debate winners</figcaption></figure>
+      <figure class="reveal" data-cat="sports"><img src="img/gallery/basketball-court.jpg" alt="Students playing basketball on the school court" loading="lazy" /><figcaption>Basketball court</figcaption></figure>
+      <figure class="reveal" data-cat="academics"><img src="img/gallery/primary-classroom.jpg" alt="Young learners in a bright primary classroom" loading="lazy" /><figcaption>Primary classroom</figcaption></figure>
     </div>
+    <div class="ctr reveal"><a class="btn btn-line" href="gallery.html">View full gallery
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </div>
 </section>
 
-<!-- Message desk -->
-<section class="message" id="messages">
-  <div class="wrap" id="news">
-    <span class="eyebrow c" style="color:#ffe9ad">Message desk</span>
-    <h2 class="sec-title">Words that guide our school</h2>
-    <div class="rule"></div>
-    <div class="mtabs" id="msgTabs">
-      <button class="active" data-p="p1">From the Principal</button>
-      <button data-p="p2">From the Chairman</button>
-    </div>
-    <div class="mpanel active" id="p1">
-      <div class="pic"><img src="img/principal.jpg" alt="Principal of Dr. Lokmandas Public School" /></div>
-      <div>
-        <p class="q">“Every child carries a unique possibility. We strive to see that potential, nurture it with patient guidance, and give every learner the confidence to ask questions and try new things — alongside kindness, discipline, and the courage to keep learning.”</p>
-        <div class="who"><b>Principal</b><span>Dr. Lokmandas Public School, Etah</span></div>
-      </div>
-    </div>
-    <div class="mpanel" id="p2">
-      <div class="pic"><img src="img/chairman.jpg" alt="Chairman of Dr. Lokmandas Public School" /></div>
-      <div>
-        <p class="q">“Education should prepare young people for more than examinations. We want our students to think independently, embrace new ideas, and stay rooted in integrity and respect — growing into capable, compassionate citizens.”</p>
-        <div class="who"><b>Chairman</b><span>Dr. Lokmandas Public School, Etah</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Toppers slideshow -->
-<section class="toppers" id="toppers">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow c">Our pride</span>
-      <h2 class="sec-title">Celebrating excellence · CBSE 2025–26</h2>
-      <div class="rule"></div>
-      <p class="sec-sub" style="max-width:600px;margin-inline:auto">Heartiest congratulations to our brilliant achievers of the CBSE Board Results 2025–26.</p>
-    </div>
-    <div class="ttabs reveal">
-      <button class="active" data-t="t10">Class X · Finest Gems</button>
-      <button data-t="t12">Class XII · Finest Gems</button>
-    </div>
-
-    <!-- Class X slideshow -->
-    <div class="tpanel active" id="t10">
-      <div class="tcar">
-        <div class="tcar-view"><div class="tcar-track">
-          <div class="tslide"><div class="pic"><span class="rbadge top"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 6 .9-4.5 4.3 1 6.3L12 17l-5.5 2.8 1-6.3L3 8.9 9 8z"/></svg>School Topper · X</span><img src="img/toppers/x-divyam-verma.jpg" alt="Divyam Verma" /></div><div class="info"><span class="crown"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>Rank 1 · Class X</span><h3>Divyam Verma</h3><div class="pct">96.2% <small>aggregate</small></div><div class="subj"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>Class X School Topper · 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 2</span><img src="img/toppers/x-anshul-pandey.jpg" alt="Anshul Pandey" /></div><div class="info"><span class="crown">Rank 2 · Class X</span><h3>Anshul Pandey</h3><div class="pct">94.8% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 3</span><img src="img/toppers/x-aditya-kumar.jpg" alt="Aditya Kumar" /></div><div class="info"><span class="crown">Rank 3 · Class X</span><h3>Aditya Kumar</h3><div class="pct">93.4% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 4</span><img src="img/toppers/x-yashkanti-yadav.jpg" alt="Yashkanti Yadav" /></div><div class="info"><span class="crown">Rank 4 · Class X</span><h3>Yashkanti Yadav</h3><div class="pct">93.2% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 5</span><img src="img/toppers/x-vinayak-gaur.jpg" alt="Vinayak Gaur" /></div><div class="info"><span class="crown">Rank 5 · Class X</span><h3>Vinayak Gaur</h3><div class="pct">92.8% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 6</span><img src="img/toppers/x-siddharth-chauhan.jpg" alt="Siddharth Chauhan" /></div><div class="info"><span class="crown">Rank 6 · Class X</span><h3>Siddharth Chauhan</h3><div class="pct">91.6% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 7</span><img src="img/toppers/x-deeksha-kumari.jpg" alt="Deeksha Kumari" /></div><div class="info"><span class="crown">Rank 7 · Class X</span><h3>Deeksha Kumari</h3><div class="pct">91.4% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 8</span><img src="img/toppers/x-umme-sulaim-fatima.jpg" alt="Umme Sulaim Fatima" /></div><div class="info"><span class="crown">Rank 8 · Class X</span><h3>Umme Sulaim Fatima</h3><div class="pct">91.2% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 9</span><img src="img/toppers/x-vidushi-shakya.jpg" alt="Vidushi Shakya" /></div><div class="info"><span class="crown">Rank 9 · Class X</span><h3>Vidushi Shakya</h3><div class="pct">91% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 10</span><img src="img/toppers/x-veer-pratap.jpg" alt="Veer Pratap Sisodiya" /></div><div class="info"><span class="crown">Rank 10 · Class X</span><h3>Veer Pratap Sisodiya</h3><div class="pct">90.4% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 11</span><img src="img/toppers/x-rahul-shakya.jpg" alt="Rahul Shakya" /></div><div class="info"><span class="crown">Rank 11 · Class X</span><h3>Rahul Shakya</h3><div class="pct">90.2% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 12</span><img src="img/toppers/x-rajat.jpg" alt="Rajat" /></div><div class="info"><span class="crown">Rank 12 · Class X</span><h3>Rajat</h3><div class="pct">90% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 13</span><img src="img/toppers/x-somendra-sharma.jpg" alt="Somendra Kumar Sharma" /></div><div class="info"><span class="crown">Rank 13 · Class X</span><h3>Somendra Kumar Sharma</h3><div class="pct">89.6% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 14</span><img src="img/toppers/x-zoya.jpg" alt="Zoya" /></div><div class="info"><span class="crown">Rank 14 · Class X</span><h3>Zoya</h3><div class="pct">89.6% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 15</span><img src="img/toppers/x-soni-yadav.jpg" alt="Soni Yadav" /></div><div class="info"><span class="crown">Rank 15 · Class X</span><h3>Soni Yadav</h3><div class="pct">89.2% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 16</span><img src="img/toppers/x-apoorva-pandey.jpg" alt="Apoorva Pandey" /></div><div class="info"><span class="crown">Rank 16 · Class X</span><h3>Apoorva Pandey</h3><div class="pct">89% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-        </div></div>
-        <div class="tcar-foot">
-          <button class="nav prev" type="button" aria-label="Previous topper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg></button>
-          <span class="count">1 / 16</span>
-          <button class="nav next" type="button" aria-label="Next topper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg></button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Class XII slideshow -->
-    <div class="tpanel" id="t12">
-      <div class="tcar">
-        <div class="tcar-view"><div class="tcar-track">
-          <div class="tslide"><div class="pic"><span class="rbadge top"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 6 .9-4.5 4.3 1 6.3L12 17l-5.5 2.8 1-6.3L3 8.9 9 8z"/></svg>School Topper · XII</span><img src="img/toppers/xii-kajal-verma.jpg" alt="Kajal Verma" /></div><div class="info"><span class="crown"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>Rank 1 · Class XII</span><h3>Kajal Verma</h3><div class="pct">95% <small>aggregate</small></div><div class="subj"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3c3 3 3 15 0 18M3 12h18"/></svg>Geography · 98 / 100</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 2</span><img src="img/toppers/xii-asmi-yadav.jpg" alt="Asmi Yadav" /></div><div class="info"><span class="crown">Rank 2 · Class XII</span><h3>Asmi Yadav</h3><div class="pct">93.8% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 3</span><img src="img/toppers/xii-khushgra-varshney.jpg" alt="Khushgra Varshney" /></div><div class="info"><span class="crown">Rank 3 · Class XII</span><h3>Khushgra Varshney</h3><div class="pct">92.6% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 4</span><img src="img/toppers/xii-nikita-gupta.jpg" alt="Nikita Gupta" /></div><div class="info"><span class="crown">Rank 4 · Class XII</span><h3>Nikita Gupta</h3><div class="pct">90.8% <small>aggregate</small></div><div class="subj"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>English · 99 / 100</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 5</span><img src="img/toppers/xii-poonam.jpg" alt="Poonam" /></div><div class="info"><span class="crown">Rank 5 · Class XII</span><h3>Poonam</h3><div class="pct">90.4% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-          <div class="tslide"><div class="pic"><span class="rbadge">Rank 6</span><img src="img/toppers/xii-janvi-chauhan.jpg" alt="Janvi Chauhan" /></div><div class="info"><span class="crown">Rank 6 · Class XII</span><h3>Janvi Chauhan</h3><div class="pct">90.2% <small>aggregate</small></div><div class="subj">CBSE Board 2025–26</div></div></div>
-        </div></div>
-        <div class="tcar-foot">
-          <button class="nav prev" type="button" aria-label="Previous topper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg></button>
-          <span class="count">1 / 6</span>
-          <button class="nav next" type="button" aria-label="Next topper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg></button>
-        </div>
-      </div>
-    </div>
-    <p class="tnote">Congratulations to every achiever — the management and staff applaud your dedication.</p>
-  </div>
-</section>
-
-<!-- Admissions CTA -->
 <section class="cta" id="admissions">
   <div class="wrap reveal">
     <span class="eyebrow c">Admissions 2026–27</span>
     <h2 style="margin-top:.5rem">Give your child a place to belong</h2>
     <p>Now enrolling from Nursery to Class 12. Share your details and our admissions team will guide you through every step.</p>
     <div class="row">
-      <a class="btn btn-navy" href="#contact">Enquire now
+      <a class="btn btn-navy" href="contact.html">Enquire now
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="btn btn-outline-navy" href="tel:+917520911618">Call 7520911618</a>
     </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div class="cinfo reveal">
-      <span class="eyebrow">Get in touch</span>
-      <h2 class="sec-title" style="margin:.4rem 0 .4rem">Contact the school</h2>
-      <div class="rule" style="margin-bottom:1.4rem"></div>
-      <div class="row">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-        <div><b>Campus</b><p>Chandpur, Aliganj Road, Etah, Uttar Pradesh</p><a href="https://www.google.com/maps/search/Dr.+Lokman+Das+Public+School+Chandpur+Aliganj+Road+Etah" target="_blank" rel="noopener">Get directions →</a></div>
-      </div>
-      <div class="row">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
-        <div><b>Phone</b><a href="tel:+917520911618">7520911618</a> · <a href="tel:+919897541157">9897541157</a></div>
-      </div>
-      <div class="row">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-        <div><b>Email</b><a href="mailto:drlokmandaspublicschool01@gmail.com">drlokmandaspublicschool01@gmail.com</a></div>
-      </div>
-      <div class="row">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-        <div><b>Office hours</b><p>Monday – Saturday · 9:00 AM – 3:00 PM · CBSE Aff. No. 2131433</p></div>
-      </div>
-    </div>
-    <form class="enq reveal" id="enqForm" novalidate>
-      <h3>Admission &amp; general enquiry</h3>
-      <p class="hint">Fill in your details and we'll prepare a reply. You can also call or email us anytime.</p>
-      <div class="two">
-        <div class="fld"><label for="pname">Parent / student name</label><input id="pname" type="text" autocomplete="name" required /></div>
-        <div class="fld"><label for="phone">Phone</label><input id="phone" type="tel" autocomplete="tel" inputmode="tel" /></div>
-      </div>
-      <div class="two">
-        <div class="fld"><label for="email">Email</label><input id="email" type="email" autocomplete="email" /></div>
-        <div class="fld"><label for="grade">Class of interest</label>
-          <select id="grade"><option value="">Select…</option><option>Nursery / KG</option><option>Class 1 – 5</option><option>Class 6 – 8</option><option>Class 9 – 10</option><option>Class 11 – 12</option></select>
-        </div>
-      </div>
-      <div class="fld"><label for="msg">Message</label><textarea id="msg" placeholder="Tell us how we can help…"></textarea></div>
-      <button class="btn btn-gold" type="submit" style="width:100%;justify-content:center">Prepare my enquiry</button>
-      <div class="note" id="enqNote"></div>
-    </form>
   </div>
 </section>
 
@@ -735,11 +261,12 @@ footer .fc svg{width:16px;height:16px;color:var(--gold-2);flex:none;margin-top:.
     <div>
       <h4>Quick links</h4>
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#academics">Academics</a></li>
-        <li><a href="#facilities">Facilities</a></li>
-        <li><a href="#life">Gallery</a></li>
-        <li><a href="#toppers">Toppers</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="facilities.html">Facilities</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="toppers.html">Toppers</a></li>
+        <li><a href="cbse.html">CBSE disclosure</a></li>
       </ul>
     </div>
     <div class="fc">
@@ -754,6 +281,7 @@ footer .fc svg{width:16px;height:16px;color:var(--gold-2);flex:none;margin-top:.
     <div class="wrap">
       <span>© 2026 Dr. Lokmandas Public School, Etah. All rights reserved.</span>
       <span>CBSE Affiliated · Aff. No. 2131433</span>
+      <span class="powered">Powered by <a href="https://www.edumaxim.com/" target="_blank" rel="noopener"><b>Edumaxim</b></a></span>
     </div>
   </div>
 </footer>
@@ -810,96 +338,6 @@ footer .fc svg{width:16px;height:16px;color:var(--gold-2);flex:none;margin-top:.
 
 <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 
-<script>
-(function(){
-  var nav=document.getElementById('nav'),hero=document.getElementById('hero'),toTop=document.getElementById('toTop');
-  requestAnimationFrame(function(){hero.classList.add('in')});
-  function onScroll(){var y=window.scrollY;nav.classList.toggle('scrolled',y>6);toTop.classList.toggle('show',y>700)}
-  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
-
-  var burger=document.getElementById('burger'),drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim'),dClose=document.getElementById('dClose');
-  function oM(){drawer.classList.add('open');scrim.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true')}
-  function cM(){drawer.classList.remove('open');scrim.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false')}
-  burger.addEventListener('click',oM);dClose.addEventListener('click',cM);scrim.addEventListener('click',cM);
-  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cM)});
-
-  /* hero carousel */
-  var slides=[].slice.call(document.querySelectorAll('.hero .slide')),dotsW=document.getElementById('heroDots'),idx=0,timer=null,
-      reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-  slides.forEach(function(s,i){var b=document.createElement('button');b.setAttribute('aria-label','Slide '+(i+1));if(i===0)b.className='active';b.addEventListener('click',function(){go(i)});dotsW.appendChild(b)});
-  var dots=[].slice.call(dotsW.children);
-  function show(n){slides[idx].classList.remove('active');dots[idx].classList.remove('active');idx=(n+slides.length)%slides.length;slides[idx].classList.add('active');dots[idx].classList.add('active')}
-  function go(n){show(n);reset()}
-  function reset(){if(timer)clearInterval(timer);if(!reduce)timer=setInterval(function(){show(idx+1)},5000)}
-  document.addEventListener('visibilitychange',function(){if(document.hidden){if(timer)clearInterval(timer)}else{reset()}});
-  if(!reduce)reset();
-
-  /* message tabs */
-  var mtabs=document.querySelectorAll('#msgTabs button');
-  mtabs.forEach(function(b){b.addEventListener('click',function(){
-    mtabs.forEach(function(x){x.classList.remove('active')});b.classList.add('active');
-    document.querySelectorAll('.message .mpanel').forEach(function(p){p.classList.remove('active')});
-    document.getElementById(b.dataset.p).classList.add('active');
-  })});
-
-  /* toppers slideshow */
-  document.querySelectorAll('.tcar').forEach(function(car){
-    var track=car.querySelector('.tcar-track'),n=track.children.length,
-        prev=car.querySelector('.prev'),next=car.querySelector('.next'),count=car.querySelector('.count'),i=0;
-    function upd(){track.style.transform='translateX(-'+(i*100)+'%)';if(count)count.textContent=(i+1)+' / '+n}
-    prev.addEventListener('click',function(){i=(i-1+n)%n;upd()});
-    next.addEventListener('click',function(){i=(i+1)%n;upd()});
-    car._reset=function(){i=0;upd()};upd();
-  });
-  var ttabs=document.querySelectorAll('.ttabs button');
-  ttabs.forEach(function(b){b.addEventListener('click',function(){
-    ttabs.forEach(function(x){x.classList.remove('active')});b.classList.add('active');
-    document.querySelectorAll('.tpanel').forEach(function(p){p.classList.remove('active')});
-    var panel=document.getElementById(b.dataset.t);panel.classList.add('active');
-    var car=panel.querySelector('.tcar');if(car&&car._reset)car._reset();
-  })});
-
-  /* reveal + count-up */
-  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.1});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
-  function animate(el){var t=+el.dataset.count,suf=el.dataset.suffix||'',s=null,d=1400;
-    function step(ts){if(!s)s=ts;var p=Math.min((ts-s)/d,1);el.textContent=Math.floor((1-Math.pow(1-p,3))*t).toLocaleString('en-IN')+suf;if(p<1)requestAnimationFrame(step);else el.textContent=t.toLocaleString('en-IN')+suf}
-    requestAnimationFrame(step)}
-  var cio=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var b=en.target;if(reduce){b.textContent=(+b.dataset.count).toLocaleString('en-IN')+(b.dataset.suffix||'')}else{animate(b)}cio.unobserve(b)}})},{threshold:.6});
-  document.querySelectorAll('[data-count]').forEach(function(b){cio.observe(b)});
-
-  /* enquiry form */
-  var form=document.getElementById('enqForm'),note=document.getElementById('enqNote');
-  form.addEventListener('submit',function(e){e.preventDefault();
-    var name=document.getElementById('pname').value.trim();if(!name){document.getElementById('pname').focus();return}
-    var phone=document.getElementById('phone').value.trim(),email=document.getElementById('email').value.trim(),grade=document.getElementById('grade').value,msg=document.getElementById('msg').value.trim();
-    note.innerHTML='Thank you, '+name.replace(/</g,'&lt;')+'. Please send your enquiry to '+
-      '<a href="mailto:drlokmandaspublicschool01@gmail.com?subject='+encodeURIComponent('Admission enquiry — '+name)+
-      '&body='+encodeURIComponent('Name: '+name+'\nPhone: '+phone+'\nEmail: '+email+'\nClass of interest: '+grade+'\n\n'+msg)+
-      '" style="font-weight:700;text-decoration:underline">drlokmandaspublicschool01@gmail.com</a> or call 7520911618.';
-    note.classList.add('show')});
-
-  /* popup */
-  var pop=document.getElementById('popScrim');
-  if(pop){
-    var track=document.getElementById('popTrack'),pdots=[].slice.call(document.querySelectorAll('#popDots button')),
-        nextBtn=document.getElementById('popNext'),page=0,seen=false;
-    try{seen=sessionStorage.getItem('ldps_pop_2526')==='1'}catch(e){}
-    function setPage(n){page=n;track.style.transform='translateX(-'+(n*50)+'%)';
-      pdots.forEach(function(d,i){d.classList.toggle('active',i===n)});
-      nextBtn.textContent=n===0?'Class XII →':'← Class X';}
-    pdots.forEach(function(d,i){d.addEventListener('click',function(){setPage(i)})});
-    nextBtn.addEventListener('click',function(){setPage(page===0?1:0)});
-    function pOpen(){pop.classList.add('show');document.documentElement.style.overflow='hidden'}
-    function pClose(){pop.classList.remove('show');document.documentElement.style.overflow='';try{sessionStorage.setItem('ldps_pop_2526','1')}catch(e){}}
-    if(!seen){setTimeout(pOpen,650)}
-    document.getElementById('popClose').addEventListener('click',pClose);
-    document.getElementById('popView').addEventListener('click',pClose);
-    pop.addEventListener('click',function(e){if(e.target===pop)pClose()});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')pClose()});
-  }
-})();
-</script>
+<script src="script.js" defer></script>
 </body>
 </html>
