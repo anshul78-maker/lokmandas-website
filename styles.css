@@ -531,3 +531,74 @@ footer .fc svg{width:16px;height:16px;color:var(--gold-2);flex:none;margin-top:.
 .founder .fdot:first-child{transform-origin:right}
 .founder .fdot:last-child{transform-origin:left}
 .founder.in .fdot{transform:scaleX(1)}
+
+/* =====================================================================
+   Readability pass: bigger small text, stronger contrast, shorter lines.
+   Kept together here so it is easy to tune. (Overrides earlier rules.)
+   ===================================================================== */
+:root{
+  --muted:#4d566f;          /* body/secondary text: darker grey, ~7:1 on white  */
+  --gold-text:#916300;      /* small gold text on white: 5.3:1 (passes AA)       */
+  --gold-num:#b07a00;       /* big gold numbers on white: 3.7:1 (AA for large)   */
+}
+h1,h2,h3{text-wrap:balance}
+p{text-wrap:pretty}
+
+/* section labels and tags */
+.eyebrow{font-size:.82rem;letter-spacing:.12em}
+.sec-sub{font-size:1.1rem;line-height:1.7}
+.pcard .tag,.cards.c3 .pcard .tag{font-size:.76rem;color:var(--gold-text)}
+
+/* header + footer brand line ("PUBLIC SCHOOL · ETAH") */
+.brand small{font-size:.7rem;letter-spacing:.16em}
+footer .fb small{font-size:.7rem;letter-spacing:.16em}
+
+/* hero text over photos */
+.hero::after{background:linear-gradient(180deg,rgba(10,24,58,.5),rgba(10,24,58,.4) 44%,rgba(10,24,58,.66))}
+.hero-c h1{text-shadow:0 3px 24px rgba(0,0,0,.55)}
+.hero-c .badge{font-size:.8rem;background:rgba(18,48,107,.6);color:#ffe7a3}
+.hero-c .affil{color:#fff;font-weight:600;font-size:clamp(.95rem,1.8vw,1.1rem);text-shadow:0 2px 14px rgba(0,0,0,.65)}
+
+/* body copy: slightly larger, easier line spacing, comfortable line length */
+.about .lead{font-size:1.14rem;line-height:1.75;max-width:62ch}
+.about .pt p{font-size:1rem;line-height:1.7}
+.pcard p{font-size:1rem;line-height:1.65}
+.fcard p{font-size:.98rem;line-height:1.65}
+.lbody p{font-size:1.04rem;line-height:1.85;color:#353d55}
+.lhead small,.lsign small{font-size:.9rem}
+.lrole{font-size:.8rem}
+
+/* quick-action strip + stats */
+.qa b{font-size:1rem}
+.qa span{font-size:.86rem}
+.stat span{font-size:1rem;color:#e6ebf7}
+
+/* gallery captions: dark fade behind the text */
+.gal figure::after{content:"";position:absolute;inset:auto 0 0 0;height:55%;background:linear-gradient(transparent,rgba(10,24,58,.72));pointer-events:none}
+.gal figure figcaption{z-index:1;font-size:.95rem}
+.mgal figcaption{font-size:.95rem}
+.gfilter button{font-size:.92rem}
+
+/* toppers */
+.tslide .crown{font-size:.84rem;color:var(--gold-text)}
+.tslide .pct,.top-teaser .p,.pop .pfeat .p,.pop .prow .r .nm .p{color:var(--gold-num)}
+.tslide .rbadge{font-size:.76rem}
+.tslide .subj{font-size:.9rem}
+.top-teaser small{font-size:.9rem}
+.tnote{font-size:.95rem;max-width:70ch;margin-left:auto;margin-right:auto}
+
+/* CBSE disclosure */
+.disc-info-grid dt{font-size:.78rem}
+.doc-grid .pdf-ic{font-size:.72rem;color:var(--gold-text)}
+.doc-grid .doc-name b{font-size:.96rem}
+.doc-grid .doc-name small{font-size:.82rem}
+.disc-note{font-size:.92rem;max-width:70ch;margin-left:auto;margin-right:auto}
+
+/* forms */
+.fld label{font-size:.9rem}
+
+/* footer */
+footer .fa{font-size:.96rem;line-height:1.7;color:#b4c2e2}
+footer h4{font-size:.82rem}
+footer ul a{font-size:.98rem}
+.fbot .wrap{font-size:.88rem;color:#a9b8da}
