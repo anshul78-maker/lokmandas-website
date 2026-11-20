@@ -8,6 +8,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&display=swap" rel="stylesheet" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png" />
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+<meta name="theme-color" content="#12306b" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -80,7 +85,7 @@
     </div>
     <form class="enq reveal" id="enqForm" novalidate>
       <h3>Admission &amp; general enquiry</h3>
-      <p class="hint">Fill in your details and we'll prepare a reply. You can also call or email us anytime.</p>
+      <p class="hint">Your enquiry goes straight to the school office by email. We usually reply within one working day, or call us anytime.</p>
       <div class="two">
         <div class="fld"><label for="pname">Parent / student name</label><input id="pname" type="text" autocomplete="name" required /></div>
         <div class="fld"><label for="phone">Phone</label><input id="phone" type="tel" autocomplete="tel" inputmode="tel" /></div>
@@ -91,8 +96,9 @@
           <select id="grade"><option value="">Select…</option><option>Nursery / KG</option><option>Class 1 – 5</option><option>Class 6 – 8</option><option>Class 9 – 10</option><option>Class 11 – 12</option></select>
         </div>
       </div>
+      <input type="text" id="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
       <div class="fld"><label for="msg">Message</label><textarea id="msg" placeholder="Tell us how we can help…"></textarea></div>
-      <button class="btn btn-gold" type="submit" style="width:100%;justify-content:center">Prepare my enquiry</button>
+      <button class="btn btn-gold" type="submit" style="width:100%;justify-content:center">Send enquiry</button>
       <div class="note" id="enqNote"></div>
     </form>
   </div>

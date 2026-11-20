@@ -85,8 +85,20 @@ without republishing in Wix.
 
 ---
 
-## The enquiry form
-GitHub Pages only serves files, so `POST /api/enquiry` has nowhere to go. The form then
-shows its built-in fallback: "please call 7520911618 or email …". To receive enquiries,
-either run `server-example.js` (or your ERP backend) on a server and change
-`API_ENQUIRY` in `script.js` to its full URL, or use a form service such as Formspree.
+## The enquiry form (emails the school)
+The Contact page form sends each enquiry by email to **drlokmandaspublicschool01@gmail.com**,
+using the free service FormSubmit (formsubmit.co). No account or server is needed.
+
+**One-time activation:** the very first enquiry makes FormSubmit send an email titled
+"Action Required: Activate FormSubmit" to that Gmail (check Spam too). Click **Activate Form**
+once. That first enquiry isn't delivered, so send a second test; every enquiry after that
+arrives in the inbox.
+
+To change the email, edit `SCHOOL_EMAIL` near the "enquiry form" comment in `script.js`.
+
+## Tab name and favicon on Wix
+The browser tab shows Wix's own title and icon, because Wix is the outer page.
+- **Site name:** Wix dashboard -> Settings -> Website settings -> Site name -> `Dr. Lokmandas Public School`.
+- **Home page title:** Editor -> Pages -> Home (house icon) -> ... -> SEO Basics -> Title tag ->
+  `Dr. Lokmandas Public School, Etah | CBSE School`.
+- **Favicon:** Wix dashboard -> Settings -> Website settings -> Favicon -> upload `img/favicon-512.png`.

@@ -59,34 +59,45 @@
   var cio=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var b=en.target;if(reduce){b.textContent=(+b.dataset.count).toLocaleString('en-IN')+(b.dataset.suffix||'')}else{animate(b)}cio.unobserve(b)}})},{threshold:.6});
   document.querySelectorAll('[data-count]').forEach(function(b){cio.observe(b)});
 
-  /* enquiry form -> backend
-     Posts the fields as JSON to your API. Change API_ENQUIRY to your route.
-     Your endpoint should accept POST JSON { name, phone, email, grade, message, submittedAt }
-     and reply 2xx (optionally { "ok": true }). See server-example.js. */
-  var API_ENQUIRY = '/api/enquiry';
+  /* enquiry form -> school Gmail
+     Uses FormSubmit (formsubmit.co): a free service that emails each enquiry to the
+     address below. The FIRST enquiry triggers a one-time "Activate form" email to
+     that inbox; click the button in it once, and every enquiry after that arrives normally.
+     To use your own backend instead, set API_ENQUIRY to its URL (see server-example.js). */
+  var SCHOOL_EMAIL = 'drlokmandaspublicschool01@gmail.com';
+  var API_ENQUIRY = 'https://formsubmit.co/ajax/' + SCHOOL_EMAIL;
   var form=document.getElementById('enqForm'),note=document.getElementById('enqNote');
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   if(form)form.addEventListener('submit',function(e){e.preventDefault();
     var name=document.getElementById('pname').value.trim();if(!name){document.getElementById('pname').focus();return}
+    var phone=document.getElementById('phone').value.trim(),email=document.getElementById('email').value.trim();
+    if(!phone&&!email){note.innerHTML='Please add a phone number or an email so the school can reply to you.';note.className='note err show';document.getElementById('phone').focus();return}
+    var hp=document.getElementById('hp');
     var data={
-      name:name,
-      phone:document.getElementById('phone').value.trim(),
-      email:document.getElementById('email').value.trim(),
-      grade:document.getElementById('grade').value,
-      message:document.getElementById('msg').value.trim(),
-      submittedAt:new Date().toISOString()
+      'Name':name,
+      'Phone':phone||'-',
+      'Email':email||'-',
+      'Class of interest':document.getElementById('grade').value||'-',
+      'Message':document.getElementById('msg').value.trim()||'-',
+      'Sent from':location.href,
+      '_subject':'New enquiry from website: '+name,
+      '_template':'table',
+      '_captcha':'false',
+      '_honey':hp?hp.value:''
     };
+    if(email)data._replyto=email;
     var btn=form.querySelector('button[type="submit"]'),label=btn.textContent;
     btn.disabled=true;btn.textContent='Sending…';note.className='note';
-    fetch(API_ENQUIRY,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+    fetch(API_ENQUIRY,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
       .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json().catch(function(){return {}})})
-      .then(function(){
-        note.innerHTML='Thank you, '+esc(name)+'. Your enquiry has been received — our admissions team will contact you during office hours.';
+      .then(function(res){
+        if(res&&(res.success===false||res.success==='false'))throw new Error(res.message||'not sent');
+        note.innerHTML='Thank you, '+esc(name)+'. Your enquiry has been sent to the school office. We will contact you soon.';
         note.className='note ok show';form.reset();
       })
       .catch(function(){
         note.innerHTML='Sorry, we could not send this right now. Please call <b>7520911618</b> or email '+
-          '<a href="mailto:drlokmandaspublicschool01@gmail.com" style="font-weight:700;text-decoration:underline">drlokmandaspublicschool01@gmail.com</a>, or try again in a moment.';
+          '<a href="mailto:'+SCHOOL_EMAIL+'" style="font-weight:700;text-decoration:underline">'+SCHOOL_EMAIL+'</a>, or try again in a moment.';
         note.className='note err show';
       })
       .then(function(){btn.disabled=false;btn.textContent=label});
